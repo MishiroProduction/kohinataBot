@@ -1,0 +1,7 @@
+version: "3"
+services:
+    kohinata:
+        build: .
+        environment:
+            - BOT_TOKEN=${BOT_TOKEN}
+            - BOT_CLIENT_ID=${BOT_CLIENT_ID}
