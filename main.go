@@ -28,7 +28,7 @@ var (
 func main() {
 	// Read Environment Strings from dotenv.
 	if err := godotenv.Load(); err != nil {
-		log.Fatal("Error: Load dotenv failure")
+		log.Println("Error: Load dotenv failure")
 	}
 	// Initializing DiscordGo.
 	discord, err := discordgo.New()
@@ -41,7 +41,8 @@ func main() {
 	// Set Handler.
 	discord.AddHandler(core.CoreHandler)
 	// Open WebSocket.
-	if err := discord.Open(); if err != nil {
+	err = discord.Open()
+	if err != nil {
 		log.Fatal("Error: Open Discord WebSocket failure")
 	}
 	<-BotRoutine
