@@ -32,7 +32,10 @@ func CoreHandler(session *discordgo.Session, message *discordgo.MessageCreate) {
 		err = TalkToText(session, channel, "いい天気ですね、プロデューサーさん♪")
 
 	case strings.Contains(message.Content, "こんばんは"):
-		err = TalkToText(session, channel, "おやすみなさい、プロデューサーさん♪")
+		err = TalkToText(session, channel, "いい夜ですね、プロデューサーさん♪")
+
+	case strings.Contains(message.Content, "おやすみなさい"):
+		err = TalkToText(session, channel, "おやすみなさい、プロデューサーさん…")
 	}
 	if err != nil {
 		log.Println("Post Message failure: ", err.Error())
