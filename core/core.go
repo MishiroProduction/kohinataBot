@@ -34,7 +34,7 @@ func CoreHandler(session *discordgo.Session, message *discordgo.MessageCreate) {
 	case strings.Contains(message.Content, "こんばんは"):
 		err = TalkToText(session, channel, "いい夜ですね、プロデューサーさん♪")
 
-	case strings.Contains(message.Content, "おやすみなさい"):
+	case strings.Contains(message.Content, "おやすみ"):
 		err = TalkToText(session, channel, "おやすみなさい、プロデューサーさん…")
 	}
 	if err != nil {
